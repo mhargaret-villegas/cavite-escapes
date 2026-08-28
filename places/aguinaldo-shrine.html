@@ -1,20 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Aguinaldo Shrine | CavitEscapes</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aguinaldo Shrine | Cavite Escapes</title>
 
     <style>
+
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 30px;
+            padding: 30px 20px;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
         }
 
         nav ul {
             list-style: none;
             padding: 0;
+            text-align: center;
         }
 
         nav li {
@@ -28,103 +39,278 @@
             font-weight: bold;
         }
 
-        h1 {
-            margin-top: 40px;
+        .place {
+            text-align: center;
         }
 
         .place-image {
-            width: 700px;
+            width: 500px;
             max-width: 100%;
-            height: 450px;
-            object-fit: contain;
+            height: auto;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .description {
+            max-width: 750px;
+            margin: 0 auto 40px;
+        }
+
+        .suggest-form {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 25px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+        }
+
+        .suggest-form h2 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
             display: block;
-            margin: 30px auto;
-        }
-
-        p {
-            line-height: 1.6;
-        }
-
-        table {
-            margin: 30px auto;
-            border-collapse: collapse;
-            width: 100%;
-            max-width: 650px;
-        }
-
-        th,
-        td {
-            border: 1px solid black;
-            padding: 12px;
-            text-align: left;
-        }
-
-        th {
+            margin-bottom: 8px;
             font-weight: bold;
         }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        fieldset {
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+
+        .choice-label {
+            display: inline;
+            font-weight: normal;
+            margin-left: 5px;
+            margin-right: 15px;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+        }
+
     </style>
+
 </head>
 
 <body>
 
-    <nav>
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../about.html">About</a></li>
-            <li><a href="../contact.html">Contact</a></li>
-        </ul>
-    </nav>
+    <header>
 
-    <h1>Aguinaldo Shrine</h1>
+        <h1>Cavite Escapes</h1>
 
-    <img
-        src="../images/aguinaldo-shrine.jpeg"
-        alt="Aguinaldo Shrine in Kawit, Cavite"
-        class="place-image"
-    >
+        <p>Discover places worth the detour. 📍</p>
 
-    <p>
-        The Aguinaldo Shrine is one of the most important historical landmarks
-        in Cavite. Located in Kawit, it is known as the place where Philippine
-        independence was proclaimed on June 12, 1898.
-    </p>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
 
-    <p>
-        I recommend this place not only for history lovers but also for anyone
-        who wants to learn more about the Philippines and experience an important
-        part of the country's story. The shrine allows visitors to explore its
-        historical surroundings and appreciate the significance of the events
-        connected to it.
-    </p>
+    </header>
 
-    <h2>Visitor Details</h2>
 
-    <table>
-        <tr>
-            <th>Detail</th>
-            <th>Information</th>
-        </tr>
+    <main>
 
-        <tr>
-            <th>Location</th>
-            <td>Kawit, Cavite</td>
-        </tr>
+        <section class="place">
 
-        <tr>
-            <th>Type</th>
-            <td>Historical Landmark</td>
-        </tr>
+            <h2>Aguinaldo Shrine</h2>
 
-        <tr>
-            <th>Best Time to Visit</th>
-            <td>Morning or early afternoon</td>
-        </tr>
+            <p><strong>Category:</strong> Historical Landmark</p>
 
-        <tr>
-            <th>Recommended For</th>
-            <td>History lovers, students, and tourists</td>
-        </tr>
-    </table>
+            <img src="../images/aguinaldo-shrine.jpeg"
+                 alt="Aguinaldo Shrine in Kawit, Cavite"
+                 class="place-image">
+
+            <div class="description">
+
+                <p>
+                    The Aguinaldo Shrine is a significant historical landmark
+                    located in Kawit, Cavite. It is known for its connection
+                    to Philippine history and the country's independence.
+                </p>
+
+                <p>
+                    The shrine is a meaningful destination for visitors who
+                    want to learn more about Philippine history while
+                    exploring Cavite.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SUGGEST-A-PLACE FORM -->
+
+        <section class="suggest-form">
+
+            <h2>Suggest a Place</h2>
+
+            <p>
+                Know a place that deserves to be added to Cavite Escapes?
+                Tell us about it!
+            </p>
+
+
+            <form>
+
+                <div class="form-group">
+
+                    <label for="aguinaldo-place-name">
+                        Place Name:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="aguinaldo-place-name"
+                        name="place-name"
+                        required
+                    >
+
+                </div>
+
+
+                <fieldset>
+
+                    <legend>What category does this place belong to?</legend>
+
+
+                    <input
+                        type="radio"
+                        id="aguinaldo-food"
+                        name="category"
+                        value="food"
+                    >
+
+                    <label for="aguinaldo-food" class="choice-label">
+                        Food
+                    </label>
+
+
+                    <input
+                        type="radio"
+                        id="aguinaldo-study"
+                        name="category"
+                        value="study-spot"
+                    >
+
+                    <label for="aguinaldo-study" class="choice-label">
+                        Study Spot
+                    </label>
+
+
+                    <input
+                        type="radio"
+                        id="aguinaldo-outdoors"
+                        name="category"
+                        value="outdoors"
+                    >
+
+                    <label for="aguinaldo-outdoors" class="choice-label">
+                        Outdoors
+                    </label>
+
+                </fieldset>
+
+
+                <div class="form-group">
+
+                    <p><strong>What's good about it?</strong></p>
+
+
+                    <input
+                        type="checkbox"
+                        id="aguinaldo-affordable"
+                        name="good-points"
+                        value="affordable"
+                    >
+
+                    <label for="aguinaldo-affordable" class="choice-label">
+                        Affordable
+                    </label>
+
+
+                    <input
+                        type="checkbox"
+                        id="aguinaldo-wifi"
+                        name="good-points"
+                        value="good-wifi"
+                    >
+
+                    <label for="aguinaldo-wifi" class="choice-label">
+                        Good Wi-Fi
+                    </label>
+
+
+                    <input
+                        type="checkbox"
+                        id="aguinaldo-quiet"
+                        name="good-points"
+                        value="quiet"
+                    >
+
+                    <label for="aguinaldo-quiet" class="choice-label">
+                        Quiet
+                    </label>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="aguinaldo-email">
+                        Contact Email:
+                    </label>
+
+                    <input
+                        type="email"
+                        id="aguinaldo-email"
+                        name="email"
+                        required
+                    >
+
+                </div>
+
+
+                <button type="submit">
+                    Suggest Place
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>&copy; 2026 Cavite Escapes. All rights reserved.</p>
+
+    </footer>
 
 </body>
+
 </html>

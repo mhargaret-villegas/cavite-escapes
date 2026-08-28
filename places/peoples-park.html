@@ -1,20 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>People's Park in the Sky | CavitEscapes</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>People's Park | Cavite Escapes</title>
 
     <style>
+
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 30px;
+            padding: 30px 20px;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
         }
 
         nav ul {
             list-style: none;
             padding: 0;
+            text-align: center;
         }
 
         nav li {
@@ -28,106 +39,277 @@
             font-weight: bold;
         }
 
-        h1 {
-            margin-top: 40px;
+        .place {
+            text-align: center;
         }
 
         .place-image {
-            width: 700px;
+            width: 500px;
             max-width: 100%;
-            height: 450px;
-            object-fit: contain;
+            height: auto;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .description {
+            max-width: 750px;
+            margin: 0 auto 40px;
+        }
+
+        .suggest-form {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 25px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+        }
+
+        .suggest-form h2 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
             display: block;
-            margin: 30px auto;
-        }
-
-        p {
-            line-height: 1.6;
-        }
-
-        table {
-            margin: 30px auto;
-            border-collapse: collapse;
-            width: 100%;
-            max-width: 650px;
-        }
-
-        th,
-        td {
-            border: 1px solid black;
-            padding: 12px;
-            text-align: left;
-        }
-
-        th {
+            margin-bottom: 8px;
             font-weight: bold;
         }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        fieldset {
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+
+        .choice-label {
+            display: inline;
+            font-weight: normal;
+            margin-left: 5px;
+            margin-right: 15px;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+        }
+
     </style>
+
 </head>
 
 <body>
 
-    <nav>
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../about.html">About</a></li>
-            <li><a href="../contact.html">Contact</a></li>
-        </ul>
-    </nav>
+    <header>
 
-    <h1>People's Park in the Sky</h1>
+        <h1>Cavite Escapes</h1>
 
-    <img
-        src="../images/peoples-park.jpeg"
-        alt="People's Park in the Sky overlooking the surrounding landscape"
-        class="place-image"
-    >
+        <p>Discover places worth the detour. 📍</p>
 
-    <p>
-        People's Park in the Sky is a scenic destination in Tagaytay,
-        Cavite that offers visitors a refreshing escape from the busy
-        atmosphere of the city. Located at a higher elevation, the park
-        is known for its cool weather and wide views of the surrounding
-        landscape.
-    </p>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
 
-    <p>
-        I recommend this place for anyone who wants to slow down, enjoy
-        the fresh air, and appreciate the scenery. It is a great stop for
-        sightseeing, taking photos, and spending time with family or
-        friends. Visiting People's Park in the Sky is a simple way to
-        experience a different side of Cavite—one that feels calm,
-        elevated, and away from the usual routine.
-    </p>
+    </header>
 
-    <h2>Visitor Details</h2>
 
-    <table>
-        <tr>
-            <th>Detail</th>
-            <th>Information</th>
-        </tr>
+    <main>
 
-        <tr>
-            <th>Location</th>
-            <td>Tagaytay, Cavite</td>
-        </tr>
+        <section class="place">
 
-        <tr>
-            <th>Type</th>
-            <td>Scenic Spot</td>
-        </tr>
+            <h2>People's Park in the Sky</h2>
 
-        <tr>
-            <th>Best Time to Visit</th>
-            <td>Early morning or late afternoon</td>
-        </tr>
+            <p><strong>Category:</strong> Scenic Destination</p>
 
-        <tr>
-            <th>Recommended For</th>
-            <td>Sightseeing, photography, relaxing, and enjoying scenic views</td>
-        </tr>
-    </table>
+            <img src="../images/peoples-park.jpeg"
+                 alt="People's Park in the Sky in Tagaytay"
+                 class="place-image">
+
+            <div class="description">
+
+                <p>
+                    People's Park in the Sky is a popular destination in
+                    Tagaytay known for its elevated location and scenic
+                    views.
+                </p>
+
+                <p>
+                    It is a great place to enjoy the cool weather, take
+                    pictures, and appreciate the beautiful surroundings.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SUGGEST-A-PLACE FORM -->
+
+        <section class="suggest-form">
+
+            <h2>Suggest a Place</h2>
+
+            <p>
+                Know a place that deserves to be added to Cavite Escapes?
+                Tell us about it!
+            </p>
+
+
+            <form>
+
+                <div class="form-group">
+
+                    <label for="peoples-place-name">
+                        Place Name:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="peoples-place-name"
+                        name="place-name"
+                        required
+                    >
+
+                </div>
+
+
+                <fieldset>
+
+                    <legend>What category does this place belong to?</legend>
+
+
+                    <input
+                        type="radio"
+                        id="peoples-food"
+                        name="category"
+                        value="food"
+                    >
+
+                    <label for="peoples-food" class="choice-label">
+                        Food
+                    </label>
+
+
+                    <input
+                        type="radio"
+                        id="peoples-study"
+                        name="category"
+                        value="study-spot"
+                    >
+
+                    <label for="peoples-study" class="choice-label">
+                        Study Spot
+                    </label>
+
+
+                    <input
+                        type="radio"
+                        id="peoples-outdoors"
+                        name="category"
+                        value="outdoors"
+                    >
+
+                    <label for="peoples-outdoors" class="choice-label">
+                        Outdoors
+                    </label>
+
+                </fieldset>
+
+
+                <div class="form-group">
+
+                    <p><strong>What's good about it?</strong></p>
+
+
+                    <input
+                        type="checkbox"
+                        id="peoples-affordable"
+                        name="good-points"
+                        value="affordable"
+                    >
+
+                    <label for="peoples-affordable" class="choice-label">
+                        Affordable
+                    </label>
+
+
+                    <input
+                        type="checkbox"
+                        id="peoples-wifi"
+                        name="good-points"
+                        value="good-wifi"
+                    >
+
+                    <label for="peoples-wifi" class="choice-label">
+                        Good Wi-Fi
+                    </label>
+
+
+                    <input
+                        type="checkbox"
+                        id="peoples-quiet"
+                        name="good-points"
+                        value="quiet"
+                    >
+
+                    <label for="peoples-quiet" class="choice-label">
+                        Quiet
+                    </label>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="peoples-email">
+                        Contact Email:
+                    </label>
+
+                    <input
+                        type="email"
+                        id="peoples-email"
+                        name="email"
+                        required
+                    >
+
+                </div>
+
+
+                <button type="submit">
+                    Suggest Place
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>&copy; 2026 Cavite Escapes. All rights reserved.</p>
+
+    </footer>
 
 </body>
+
 </html>
