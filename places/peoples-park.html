@@ -7,112 +7,10 @@
 
     <title>People's Park | Cavite Escapes</title>
 
-    <style>
-
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 30px 20px;
-            line-height: 1.6;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            text-align: center;
-        }
-
-        nav li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
-        }
-
-        .place {
-            text-align: center;
-        }
-
-        .place-image {
-            width: 500px;
-            max-width: 100%;
-            height: auto;
-            border-radius: 15px;
-            margin: 20px 0;
-        }
-
-        .description {
-            max-width: 750px;
-            margin: 0 auto 40px;
-        }
-
-        .suggest-form {
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 25px;
-            border: 1px solid #ccc;
-            border-radius: 15px;
-        }
-
-        .suggest-form h2 {
-            text-align: center;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        input[type="text"],
-        input[type="email"] {
-            width: 100%;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-
-        fieldset {
-            margin-bottom: 20px;
-            padding: 15px;
-        }
-
-        .choice-label {
-            display: inline;
-            font-weight: normal;
-            margin-left: 5px;
-            margin-right: 15px;
-        }
-
-        button {
-            padding: 12px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 50px;
-        }
-
-    </style>
-
+    <link rel="stylesheet" href="../style.css">
 </head>
 
-<body>
+<body class="place-page">
 
     <header>
 
@@ -129,7 +27,6 @@
         </nav>
 
     </header>
-
 
     <main>
 
@@ -160,7 +57,6 @@
 
         </section>
 
-
         <!-- SUGGEST-A-PLACE FORM -->
 
         <section class="suggest-form">
@@ -171,7 +67,6 @@
                 Know a place that deserves to be added to Cavite Escapes?
                 Tell us about it!
             </p>
-
 
             <form>
 
@@ -190,11 +85,9 @@
 
                 </div>
 
-
                 <fieldset>
 
                     <legend>What category does this place belong to?</legend>
-
 
                     <input
                         type="radio"
@@ -207,7 +100,6 @@
                         Food
                     </label>
 
-
                     <input
                         type="radio"
                         id="peoples-study"
@@ -218,7 +110,6 @@
                     <label for="peoples-study" class="choice-label">
                         Study Spot
                     </label>
-
 
                     <input
                         type="radio"
@@ -233,11 +124,9 @@
 
                 </fieldset>
 
-
                 <div class="form-group">
 
                     <p><strong>What's good about it?</strong></p>
-
 
                     <input
                         type="checkbox"
@@ -250,7 +139,6 @@
                         Affordable
                     </label>
 
-
                     <input
                         type="checkbox"
                         id="peoples-wifi"
@@ -261,7 +149,6 @@
                     <label for="peoples-wifi" class="choice-label">
                         Good Wi-Fi
                     </label>
-
 
                     <input
                         type="checkbox"
@@ -275,7 +162,6 @@
                     </label>
 
                 </div>
-
 
                 <div class="form-group">
 
@@ -292,7 +178,6 @@
 
                 </div>
 
-
                 <button type="submit">
                     Suggest Place
                 </button>
@@ -302,7 +187,6 @@
         </section>
 
     </main>
-
 
     <footer>
 
