@@ -7,7 +7,9 @@
     --dark-ink: #222222;
     --muted-grey: #666666;
     --light-background: #f8f8f8;
+    --soft-green: #eaf6ea;
     --white: #ffffff;
+    --soft-border: #dddddd;
 }
 
 
@@ -19,15 +21,21 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
     color: var(--dark-ink);
     line-height: 1.6;
     margin: 0;
+    background-color: var(--white);
 }
 
 img {
     max-width: 100%;
+    height: auto;
 }
 
 a {
@@ -36,21 +44,23 @@ a {
 
 
 /* ========================================
-   LAYOUT REGIONS
+   SITE HEADER
    ======================================== */
-
-/* FLEXBOX HEADER */
 
 .site-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 35px;
-    border-bottom: 1px solid #dddddd;
+
+    width: 100%;
+    padding: 24px 40px;
+
+    background-color: var(--white);
+    border-bottom: 1px solid var(--soft-border);
 }
 
 
-/* GUIDE NAME */
+/* HEADER BRAND */
 
 .header-brand {
     text-align: left;
@@ -58,186 +68,132 @@ a {
 
 .header-brand h1 {
     margin: 0;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    color: var(--dark-ink);
 }
 
 .header-brand p {
-    margin: 5px 0 0;
+    margin: 8px 0 0;
     color: var(--muted-grey);
+    font-size: 1rem;
 }
 
 
-/* FLEXBOX NAVIGATION */
+/* ========================================
+   NAVIGATION
+   ======================================== */
 
 .site-header nav ul {
     display: flex;
-    gap: 20px;
+    gap: 24px;
+
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-
-/* FLEXBOX REPLACES INLINE-BLOCK */
-
-.site-header nav li {
-    margin: 0;
-}
-
 .site-header nav a {
-    text-decoration: none;
     color: var(--dark-ink);
     font-weight: bold;
+    font-size: 1.05rem;
+    padding: 8px 4px;
 }
 
 .site-header nav a:hover {
     color: var(--brand-color);
 }
 
+
+/* ========================================
+   MAIN LAYOUT
+   ======================================== */
+
 main {
     width: 100%;
 }
 
-footer {
-    text-align: center;
-    color: var(--muted-grey);
+.home-page main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 45px 30px 60px;
+}
+
+.about-page main,
+.contact-page main,
+.place-page main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 45px 30px 60px;
 }
 
 
 /* ========================================
-   FLEXBOX CENTRED HERO
-   ======================================== */
-
-.hero-banner {
-    min-height: 180px;
-    max-width: 900px;
-    margin: 0 auto 40px;
-    padding: 30px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color: #e8f5e9;
-    text-align: center;
-}
-
-.hero-banner p {
-    max-width: 650px;
-    margin: 0;
-}
-
-
-/* ========================================
-   COMPONENTS: PLACE CARDS
-   ======================================== */
-
-.place-card {
-    background-color: var(--light-background);
-    border-radius: 15px;
-    border-left: 6px solid var(--brand-color);
-    padding: 20px;
-    margin-bottom: 30px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.place-name {
-    font-size: 1.5rem;
-    color: var(--brand-color);
-    margin-bottom: 8px;
-}
-
-.place-card img {
-    width: 480px;
-    height: 360px;
-    object-fit: contain;
-    display: block;
-    margin: 20px auto;
-}
-
-.place-card a {
-    color: var(--brand-color);
-    font-weight: bold;
-}
-
-
-/* ========================================
-   COMPONENTS: HOME PAGE
+   HOME PAGE
    ======================================== */
 
 .home-page {
     text-align: center;
 }
 
-.home-page > h1,
+.home-page h1,
 .home-page > p {
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.home-page > h1 {
-    margin-top: 35px;
-    margin-bottom: 10px;
-}
-
-.home-page > p {
-    margin-bottom: 35px;
-}
-
-.home-page section {
-    margin-bottom: 40px;
-}
-
-.home-page section img {
-    width: 400px;
-    height: 300px;
-    object-fit: contain;
-    display: block;
-    margin: 20px auto;
-}
-
-.home-page h2 {
-    margin-top: 40px;
-}
-
-.home-page p {
-    line-height: 1.6;
+    margin: 0;
 }
 
 
 /* ========================================
-   COMPONENTS: ABOUT PAGE
+   WELCOME BANNER
    ======================================== */
 
-.about-page {
+/*
+   Flexbox centers the welcome message
+   horizontally and vertically.
+*/
+
+.hero-banner {
+    min-height: 230px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 40px;
+    margin: 0 auto 55px;
+
+    background-color: var(--soft-green);
+    border-radius: 18px;
+
     text-align: center;
 }
 
-.about-page > h1,
-.about-page > p {
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+.hero-banner p {
+    max-width: 850px;
+    margin: 0;
+
+    font-size: 1.25rem;
+    color: var(--dark-ink);
 }
 
-.about-page > h1 {
-    margin-top: 40px;
-    margin-bottom: 10px;
+
+/* ========================================
+   HOME INTRODUCTION
+   ======================================== */
+
+.home-page section {
+    margin-bottom: 50px;
 }
 
-.about-page h2 {
-    margin-top: 40px;
+.home-page section h2 {
+    margin-bottom: 25px;
 }
 
-.about-page p {
-    line-height: 1.6;
-    max-width: 700px;
+.home-page section p {
+    max-width: 850px;
     margin: 15px auto;
 }
 
-.about-page > img {
+.home-page section img {
     width: 400px;
     height: 300px;
     object-fit: contain;
@@ -247,7 +203,94 @@ footer {
 
 
 /* ========================================
-   COMPONENTS: CONTACT FORM
+   PLACE CARDS
+   ======================================== */
+
+.place-card {
+    background-color: var(--light-background);
+    border-radius: 15px;
+    border-left: 6px solid var(--brand-color);
+
+    padding: 25px;
+    margin: 0 auto 30px;
+
+    max-width: 650px;
+
+    text-align: center;
+}
+
+.place-name {
+    font-size: 1.5rem;
+    color: var(--brand-color);
+    margin: 0 0 8px;
+}
+
+.place-card p {
+    margin: 12px 0;
+}
+
+.place-card img {
+    width: 480px;
+    height: 360px;
+    object-fit: contain;
+
+    display: block;
+    margin: 20px auto;
+}
+
+.place-card a {
+    color: var(--brand-color);
+    font-weight: bold;
+}
+
+.place-card a:hover {
+    text-decoration: underline;
+}
+
+
+/* ========================================
+   ABOUT PAGE
+   ======================================== */
+
+.about-page {
+    text-align: center;
+}
+
+.about-page h1 {
+    margin: 0 0 15px;
+}
+
+.about-page > main > p {
+    max-width: 750px;
+    margin: 0 auto 25px;
+}
+
+.about-page section {
+    max-width: 750px;
+    margin: 45px auto;
+}
+
+.about-page section h2 {
+    margin-bottom: 20px;
+}
+
+.about-page section p {
+    max-width: 700px;
+    margin: 15px auto;
+}
+
+.about-page img {
+    width: 400px;
+    height: 300px;
+    object-fit: contain;
+
+    display: block;
+    margin: 25px auto;
+}
+
+
+/* ========================================
+   CONTACT PAGE
    ======================================== */
 
 .contact-page {
@@ -255,9 +298,15 @@ footer {
 }
 
 .contact-page main {
-    max-width: 700px;
-    margin: 40px auto;
-    padding: 20px;
+    max-width: 750px;
+}
+
+.contact-page main > p {
+    max-width: 650px;
+    margin: 0 auto 35px;
+}
+
+.contact-page form {
     text-align: left;
 }
 
@@ -268,7 +317,7 @@ footer {
 }
 
 .contact-page legend {
-    font-size: 1.3em;
+    font-size: 1.3rem;
     font-weight: bold;
     color: var(--brand-color);
     padding: 0 10px;
@@ -285,9 +334,11 @@ footer {
 .contact-page select,
 .contact-page textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
+
     font-family: Arial, sans-serif;
     font-size: 16px;
+
     border: 1px solid var(--muted-grey);
     border-radius: 5px;
 }
@@ -298,15 +349,25 @@ footer {
 }
 
 .contact-page button {
-    margin-top: 20px;
+    display: block;
+
+    margin: 20px auto 0;
     padding: 12px 25px;
+
     font-size: 16px;
     font-weight: bold;
+
     cursor: pointer;
+
     border: none;
     border-radius: 5px;
+
     background-color: var(--brand-color);
     color: var(--white);
+}
+
+.contact-page button:hover {
+    background-color: #256b29;
 }
 
 .contact-page input:focus,
@@ -318,25 +379,29 @@ footer {
 
 
 /* ========================================
-   COMPONENTS: PLACE DETAIL PAGES
+   PLACE DETAIL PAGES
    ======================================== */
 
 .place-page {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px 30px;
+    text-align: center;
 }
 
 .place {
-    text-align: center;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.place h2 {
+    margin-top: 0;
 }
 
 .place-image {
     width: 500px;
     max-width: 100%;
     height: auto;
+
     border-radius: 15px;
-    margin: 20px 0;
+    margin: 20px auto;
 }
 
 .description {
@@ -344,15 +409,31 @@ footer {
     margin: 0 auto 40px;
 }
 
+.description p {
+    margin: 15px auto;
+}
+
+
+/* ========================================
+   SUGGEST-A-PLACE FORM
+   ======================================== */
+
 .suggest-form {
     max-width: 600px;
-    margin: 50px auto;
+    margin: 50px auto 0;
     padding: 25px;
+
     border: 1px solid var(--muted-grey);
     border-radius: 15px;
+
+    text-align: left;
 }
 
 .suggest-form h2 {
+    text-align: center;
+}
+
+.suggest-form > p {
     text-align: center;
 }
 
@@ -378,34 +459,223 @@ footer {
     margin-right: 15px;
 }
 
-.place-page footer {
-    margin-top: 50px;
+.suggest-form button {
+    display: block;
+
+    margin: 20px auto 0;
+    padding: 12px 25px;
+
+    background-color: var(--brand-color);
+    color: var(--white);
+
+    border: none;
+    border-radius: 5px;
+
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.suggest-form button:hover {
+    background-color: #256b29;
 }
 
 
 /* ========================================
-   RESPONSIVE HEADER
+   FOOTER
+   ======================================== */
+
+footer {
+    border-top: 1px solid var(--soft-border);
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+    color: var(--muted-grey);
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/* ========================================
+   TABLET
+   ======================================== */
+
+@media (max-width: 800px) {
+
+    .site-header {
+        padding: 22px 25px;
+    }
+
+    .header-brand h1 {
+        font-size: 2.1rem;
+    }
+
+    .site-header nav ul {
+        gap: 16px;
+    }
+
+    .site-header nav a {
+        font-size: 1rem;
+    }
+
+    .home-page main,
+    .about-page main,
+    .contact-page main,
+    .place-page main {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
    ======================================== */
 
 @media (max-width: 600px) {
 
     .site-header {
-        padding: 20px 15px;
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 18px;
+
+        padding: 20px 18px;
+    }
+
+    .header-brand {
+        width: 100%;
+        text-align: left;
     }
 
     .header-brand h1 {
-        font-size: 1.6rem;
+        font-size: 2rem;
     }
 
     .header-brand p {
-        font-size: 0.85rem;
+        font-size: 0.95rem;
+    }
+
+    .site-header nav {
+        width: 100%;
     }
 
     .site-header nav ul {
-        gap: 10px;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 10px 20px;
+    }
+
+    .site-header nav a {
+        font-size: 0.95rem;
+        padding: 4px 0;
+    }
+
+
+    /* MAIN */
+
+    .home-page main,
+    .about-page main,
+    .contact-page main,
+    .place-page main {
+        padding: 30px 15px 45px;
+    }
+
+
+    /* WELCOME BANNER */
+
+    .hero-banner {
+        min-height: 200px;
+        padding: 25px 20px;
+        margin-bottom: 40px;
+    }
+
+    .hero-banner p {
+        font-size: 1.1rem;
+    }
+
+
+    /* HOME IMAGE */
+
+    .home-page section img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+
+
+    /* PLACE CARDS */
+
+    .place-card {
+        padding: 20px 15px;
+    }
+
+    .place-card img {
+        width: 100%;
+        max-width: 480px;
+        height: auto;
+    }
+
+
+    /* ABOUT IMAGE */
+
+    .about-page img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+
+
+    /* FORMS */
+
+    .contact-page fieldset,
+    .suggest-form {
+        padding: 18px;
+    }
+
+    .choice-label {
+        margin-right: 10px;
+    }
+
+}
+
+
+/* ========================================
+   SMALL MOBILE
+   ======================================== */
+
+@media (max-width: 400px) {
+
+    .site-header {
+        padding: 18px 15px;
+    }
+
+    .header-brand h1 {
+        font-size: 1.8rem;
+    }
+
+    .header-brand p {
+        font-size: 0.9rem;
+    }
+
+    .site-header nav ul {
+        gap: 8px 15px;
     }
 
     .site-header nav a {
         font-size: 0.9rem;
     }
+
+    .hero-banner {
+        min-height: 190px;
+    }
+
+    .hero-banner p {
+        font-size: 1rem;
+    }
+
 }
