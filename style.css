@@ -7,9 +7,8 @@
     --dark-ink: #222222;
     --muted-grey: #666666;
     --light-background: #f8f8f8;
-    --soft-green: #eaf6ea;
     --white: #ffffff;
-    --soft-border: #dddddd;
+    --soft-green: #e8f5e9;
 }
 
 
@@ -19,10 +18,6 @@
 
 * {
     box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
@@ -38,13 +33,9 @@ img {
     height: auto;
 }
 
-a {
-    text-decoration: none;
-}
-
 
 /* ========================================
-   SITE HEADER
+   HEADER AND NAVIGATION
    ======================================== */
 
 .site-header {
@@ -52,15 +43,14 @@ a {
     justify-content: space-between;
     align-items: center;
 
-    width: 100%;
-    padding: 24px 40px;
+    padding: 25px 35px;
 
+    border-bottom: 1px solid #dddddd;
     background-color: var(--white);
-    border-bottom: 1px solid var(--soft-border);
 }
 
 
-/* HEADER BRAND */
+/* GUIDE NAME AND TAGLINE */
 
 .header-brand {
     text-align: left;
@@ -69,24 +59,20 @@ a {
 .header-brand h1 {
     margin: 0;
     font-size: 2.5rem;
-    line-height: 1.2;
     color: var(--dark-ink);
 }
 
 .header-brand p {
-    margin: 8px 0 0;
+    margin: 5px 0 0;
     color: var(--muted-grey);
-    font-size: 1rem;
 }
 
 
-/* ========================================
-   NAVIGATION
-   ======================================== */
+/* NAVIGATION */
 
 .site-header nav ul {
     display: flex;
-    gap: 24px;
+    gap: 20px;
 
     list-style: none;
     padding: 0;
@@ -94,10 +80,9 @@ a {
 }
 
 .site-header nav a {
+    text-decoration: none;
     color: var(--dark-ink);
     font-weight: bold;
-    font-size: 1.05rem;
-    padding: 8px 4px;
 }
 
 .site-header nav a:hover {
@@ -113,20 +98,6 @@ main {
     width: 100%;
 }
 
-.home-page main {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 45px 30px 60px;
-}
-
-.about-page main,
-.contact-page main,
-.place-page main {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 45px 30px 60px;
-}
-
 
 /* ========================================
    HOME PAGE
@@ -136,30 +107,56 @@ main {
     text-align: center;
 }
 
-.home-page h1,
-.home-page > p {
-    margin: 0;
+.home-page main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 35px 30px 60px;
+}
+
+.home-page h1 {
+    margin-bottom: 10px;
+}
+
+.home-page main > p {
+    color: var(--muted-grey);
+    font-size: 1.05rem;
+    margin-bottom: 35px;
+}
+
+.home-page section {
+    margin-bottom: 40px;
+}
+
+.home-page section img {
+    width: 400px;
+    height: 300px;
+    object-fit: contain;
+    display: block;
+    margin: 20px auto;
+}
+
+.home-page h2 {
+    margin-top: 40px;
+}
+
+.home-page p {
+    line-height: 1.6;
 }
 
 
 /* ========================================
-   WELCOME BANNER
+   WELCOME / INTRO BANNER
    ======================================== */
 
-/*
-   Flexbox centers the welcome message
-   horizontally and vertically.
-*/
-
 .hero-banner {
-    min-height: 230px;
+    min-height: 180px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    padding: 30px 40px;
-    margin: 0 auto 55px;
+    margin: 0 auto 40px;
+    padding: 30px;
 
     background-color: var(--soft-green);
     border-radius: 18px;
@@ -168,37 +165,22 @@ main {
 }
 
 .hero-banner p {
-    max-width: 850px;
+    max-width: 750px;
     margin: 0;
-
-    font-size: 1.25rem;
-    color: var(--dark-ink);
+    font-size: 1.1rem;
 }
 
 
 /* ========================================
-   HOME INTRODUCTION
+   PLACE GRID
    ======================================== */
 
-.home-page section {
-    margin-bottom: 50px;
-}
+.place-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
 
-.home-page section h2 {
-    margin-bottom: 25px;
-}
-
-.home-page section p {
-    max-width: 850px;
-    margin: 15px auto;
-}
-
-.home-page section img {
-    width: 400px;
-    height: 300px;
-    object-fit: contain;
-    display: block;
-    margin: 25px auto;
+    align-items: stretch;
 }
 
 
@@ -207,14 +189,16 @@ main {
    ======================================== */
 
 .place-card {
+    flex: 1 1 240px;
+
+    display: flex;
+    flex-direction: column;
+
     background-color: var(--light-background);
     border-radius: 15px;
     border-left: 6px solid var(--brand-color);
 
-    padding: 25px;
-    margin: 0 auto 30px;
-
-    max-width: 650px;
+    padding: 20px;
 
     text-align: center;
 }
@@ -222,16 +206,19 @@ main {
 .place-name {
     font-size: 1.5rem;
     color: var(--brand-color);
-    margin: 0 0 8px;
+    margin-top: 0;
+    margin-bottom: 8px;
 }
 
 .place-card p {
-    margin: 12px 0;
+    margin: 8px 0;
 }
 
 .place-card img {
-    width: 480px;
-    height: 360px;
+    width: 100%;
+    max-width: 300px;
+    height: 220px;
+
     object-fit: contain;
 
     display: block;
@@ -243,10 +230,6 @@ main {
     font-weight: bold;
 }
 
-.place-card a:hover {
-    text-decoration: underline;
-}
-
 
 /* ========================================
    ABOUT PAGE
@@ -256,25 +239,23 @@ main {
     text-align: center;
 }
 
+.about-page main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 35px 30px 60px;
+}
+
 .about-page h1 {
-    margin: 0 0 15px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
-.about-page > main > p {
-    max-width: 750px;
-    margin: 0 auto 25px;
+.about-page h2 {
+    margin-top: 40px;
 }
 
-.about-page section {
-    max-width: 750px;
-    margin: 45px auto;
-}
-
-.about-page section h2 {
-    margin-bottom: 20px;
-}
-
-.about-page section p {
+.about-page p {
+    line-height: 1.6;
     max-width: 700px;
     margin: 15px auto;
 }
@@ -282,6 +263,7 @@ main {
 .about-page img {
     width: 400px;
     height: 300px;
+
     object-fit: contain;
 
     display: block;
@@ -298,16 +280,16 @@ main {
 }
 
 .contact-page main {
-    max-width: 750px;
-}
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
 
-.contact-page main > p {
-    max-width: 650px;
-    margin: 0 auto 35px;
-}
-
-.contact-page form {
     text-align: left;
+}
+
+.contact-page main > h2,
+.contact-page main > p {
+    text-align: center;
 }
 
 .contact-page fieldset {
@@ -317,7 +299,7 @@ main {
 }
 
 .contact-page legend {
-    font-size: 1.3rem;
+    font-size: 1.3em;
     font-weight: bold;
     color: var(--brand-color);
     padding: 0 10px;
@@ -334,7 +316,8 @@ main {
 .contact-page select,
 .contact-page textarea {
     width: 100%;
-    padding: 12px;
+
+    padding: 10px;
 
     font-family: Arial, sans-serif;
     font-size: 16px;
@@ -349,9 +332,8 @@ main {
 }
 
 .contact-page button {
-    display: block;
+    margin-top: 20px;
 
-    margin: 20px auto 0;
     padding: 12px 25px;
 
     font-size: 16px;
@@ -363,11 +345,7 @@ main {
     border-radius: 5px;
 
     background-color: var(--brand-color);
-    color: var(--white);
-}
-
-.contact-page button:hover {
-    background-color: #256b29;
+    color: white;
 }
 
 .contact-page input:focus,
@@ -383,16 +361,17 @@ main {
    ======================================== */
 
 .place-page {
-    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.place-page main {
+    width: 100%;
 }
 
 .place {
-    max-width: 850px;
-    margin: 0 auto;
-}
-
-.place h2 {
-    margin-top: 0;
+    text-align: center;
 }
 
 .place-image {
@@ -401,16 +380,12 @@ main {
     height: auto;
 
     border-radius: 15px;
-    margin: 20px auto;
+    margin: 20px 0;
 }
 
 .description {
     max-width: 750px;
     margin: 0 auto 40px;
-}
-
-.description p {
-    margin: 15px auto;
 }
 
 
@@ -420,20 +395,14 @@ main {
 
 .suggest-form {
     max-width: 600px;
-    margin: 50px auto 0;
+    margin: 50px auto;
     padding: 25px;
 
     border: 1px solid var(--muted-grey);
     border-radius: 15px;
-
-    text-align: left;
 }
 
 .suggest-form h2 {
-    text-align: center;
-}
-
-.suggest-form > p {
     text-align: center;
 }
 
@@ -460,13 +429,10 @@ main {
 }
 
 .suggest-form button {
-    display: block;
-
-    margin: 20px auto 0;
-    padding: 12px 25px;
+    padding: 12px 20px;
 
     background-color: var(--brand-color);
-    color: var(--white);
+    color: white;
 
     border: none;
     border-radius: 5px;
@@ -475,8 +441,8 @@ main {
     cursor: pointer;
 }
 
-.suggest-form button:hover {
-    background-color: #256b29;
+.place-page footer {
+    margin-top: 50px;
 }
 
 
@@ -485,197 +451,106 @@ main {
    ======================================== */
 
 footer {
-    border-top: 1px solid var(--soft-border);
-
     text-align: center;
-
-    padding: 30px 20px;
-
     color: var(--muted-grey);
-}
-
-footer p {
-    margin: 0;
+    padding: 30px 20px;
 }
 
 
 /* ========================================
-   TABLET
-   ======================================== */
-
-@media (max-width: 800px) {
-
-    .site-header {
-        padding: 22px 25px;
-    }
-
-    .header-brand h1 {
-        font-size: 2.1rem;
-    }
-
-    .site-header nav ul {
-        gap: 16px;
-    }
-
-    .site-header nav a {
-        font-size: 1rem;
-    }
-
-    .home-page main,
-    .about-page main,
-    .contact-page main,
-    .place-page main {
-        padding-left: 25px;
-        padding-right: 25px;
-    }
-
-}
-
-
-/* ========================================
-   MOBILE
+   RESPONSIVE LAYOUT
    ======================================== */
 
 @media (max-width: 600px) {
 
+    /* HEADER */
+
     .site-header {
         flex-direction: column;
-        align-items: flex-start;
+        justify-content: center;
+        align-items: center;
 
-        gap: 18px;
+        padding: 20px 15px;
 
-        padding: 20px 18px;
+        text-align: center;
     }
+
+
+    /* GUIDE NAME */
 
     .header-brand {
         width: 100%;
-        text-align: left;
+        text-align: center;
     }
 
     .header-brand h1 {
-        font-size: 2rem;
+        font-size: 1.9rem;
     }
 
     .header-brand p {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+        margin-top: 5px;
     }
+
+
+    /* NAVIGATION BELOW HEADER */
 
     .site-header nav {
         width: 100%;
+        margin-top: 15px;
     }
 
     .site-header nav ul {
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        gap: 10px 20px;
+        justify-content: center;
+        gap: 18px;
     }
 
     .site-header nav a {
         font-size: 0.95rem;
-        padding: 4px 0;
     }
 
 
-    /* MAIN */
+    /* HOME PAGE */
 
-    .home-page main,
-    .about-page main,
-    .contact-page main,
-    .place-page main {
-        padding: 30px 15px 45px;
+    .home-page main {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
 
     /* WELCOME BANNER */
 
     .hero-banner {
-        min-height: 200px;
-        padding: 25px 20px;
-        margin-bottom: 40px;
-    }
-
-    .hero-banner p {
-        font-size: 1.1rem;
-    }
-
-
-    /* HOME IMAGE */
-
-    .home-page section img {
-        width: 100%;
-        max-width: 400px;
-        height: auto;
-    }
-
-
-    /* PLACE CARDS */
-
-    .place-card {
-        padding: 20px 15px;
-    }
-
-    .place-card img {
-        width: 100%;
-        max-width: 480px;
-        height: auto;
-    }
-
-
-    /* ABOUT IMAGE */
-
-    .about-page img {
-        width: 100%;
-        max-width: 400px;
-        height: auto;
-    }
-
-
-    /* FORMS */
-
-    .contact-page fieldset,
-    .suggest-form {
-        padding: 18px;
-    }
-
-    .choice-label {
-        margin-right: 10px;
-    }
-
-}
-
-
-/* ========================================
-   SMALL MOBILE
-   ======================================== */
-
-@media (max-width: 400px) {
-
-    .site-header {
-        padding: 18px 15px;
-    }
-
-    .header-brand h1 {
-        font-size: 1.8rem;
-    }
-
-    .header-brand p {
-        font-size: 0.9rem;
-    }
-
-    .site-header nav ul {
-        gap: 8px 15px;
-    }
-
-    .site-header nav a {
-        font-size: 0.9rem;
-    }
-
-    .hero-banner {
-        min-height: 190px;
+        min-height: 160px;
+        padding: 20px;
     }
 
     .hero-banner p {
         font-size: 1rem;
+    }
+
+
+    /* ABOUT PAGE */
+
+    .about-page main {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    /* CONTACT PAGE */
+
+    .contact-page main {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    /* PLACE DETAIL PAGES */
+
+    .place-page {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
 }
