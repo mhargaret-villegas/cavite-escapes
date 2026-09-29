@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Imus Plaza | CavitEscapes</title>
+    <title>Aguinaldo Shrine | CavitEscapes</title>
 
     <link rel="stylesheet" href="../style.css">
 </head>
 
 <body class="place-page">
+
 
     <!-- SITE HEADER -->
 
@@ -29,14 +30,51 @@
         <nav>
 
             <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../about.html">About</a></li>
-                <li><a href="../contact.html">Contact</a></li>
+                <li>
+                    <a href="../index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="../about.html">About</a>
+                </li>
+
+                <li>
+                    <a href="../contact.html">Contact</a>
+                </li>
             </ul>
 
         </nav>
 
     </header>
+
+
+    <!-- SIDEBAR -->
+
+    <aside>
+
+        <h2>Explore Places</h2>
+
+        <ul>
+            <li>
+                <a href="imus-plaza.html">
+                    Imus Plaza
+                </a>
+            </li>
+
+            <li>
+                <a href="aguinaldo-shrine.html">
+                    Aguinaldo Shrine
+                </a>
+            </li>
+
+            <li>
+                <a href="peoples-park.html">
+                    People's Park
+                </a>
+            </li>
+        </ul>
+
+    </aside>
 
 
     <main>
@@ -45,15 +83,15 @@
 
         <section class="place">
 
-            <h2>Imus Plaza</h2>
+            <h2>Aguinaldo Shrine</h2>
 
             <p>
-                <strong>Category:</strong> City Landmark
+                <strong>Category:</strong> Historical Landmark
             </p>
 
             <img
-                src="../images/imus-plaza.jpeg"
-                alt="Imus Plaza in Cavite"
+                src="../images/aguinaldo-shrine.jpeg"
+                alt="Aguinaldo Shrine in Kawit, Cavite"
                 class="place-image"
             >
 
@@ -61,15 +99,16 @@
             <div class="description">
 
                 <p>
-                    Imus Plaza is a well-known city landmark in Imus,
-                    Cavite. It is a great place to appreciate the city's
-                    history, surroundings, and community atmosphere.
+                    The Aguinaldo Shrine is a significant historical
+                    landmark located in Kawit, Cavite. It is known for
+                    its connection to Philippine history and the
+                    country's independence.
                 </p>
 
                 <p>
-                    Whether you're visiting for a quick stop, taking
-                    photos, or simply exploring Imus, the plaza is a
-                    place worth checking out.
+                    The shrine is a meaningful destination for visitors
+                    who want to learn more about Philippine history while
+                    exploring Cavite.
                 </p>
 
             </div>
@@ -91,17 +130,15 @@
 
             <form>
 
-                <!-- PLACE NAME -->
-
                 <div class="form-group">
 
-                    <label for="imus-place-name">
+                    <label for="aguinaldo-place-name">
                         Place Name:
                     </label>
 
                     <input
                         type="text"
-                        id="imus-place-name"
+                        id="aguinaldo-place-name"
                         name="place-name"
                         required
                     >
@@ -109,24 +146,21 @@
                 </div>
 
 
-                <!-- CATEGORY -->
-
                 <fieldset>
 
                     <legend>
                         What category does this place belong to?
                     </legend>
 
-
                     <input
                         type="radio"
-                        id="imus-food"
+                        id="aguinaldo-food"
                         name="category"
                         value="food"
                     >
 
                     <label
-                        for="imus-food"
+                        for="aguinaldo-food"
                         class="choice-label"
                     >
                         Food
@@ -135,13 +169,13 @@
 
                     <input
                         type="radio"
-                        id="imus-study"
+                        id="aguinaldo-study"
                         name="category"
                         value="study-spot"
                     >
 
                     <label
-                        for="imus-study"
+                        for="aguinaldo-study"
                         class="choice-label"
                     >
                         Study Spot
@@ -150,13 +184,13 @@
 
                     <input
                         type="radio"
-                        id="imus-outdoors"
+                        id="aguinaldo-outdoors"
                         name="category"
                         value="outdoors"
                     >
 
                     <label
-                        for="imus-outdoors"
+                        for="aguinaldo-outdoors"
                         class="choice-label"
                     >
                         Outdoors
@@ -165,24 +199,21 @@
                 </fieldset>
 
 
-                <!-- WHAT'S GOOD ABOUT IT -->
-
                 <div class="form-group">
 
                     <p>
                         <strong>What's good about it?</strong>
                     </p>
 
-
                     <input
                         type="checkbox"
-                        id="imus-affordable"
+                        id="aguinaldo-affordable"
                         name="good-points"
                         value="affordable"
                     >
 
                     <label
-                        for="imus-affordable"
+                        for="aguinaldo-affordable"
                         class="choice-label"
                     >
                         Affordable
@@ -191,13 +222,13 @@
 
                     <input
                         type="checkbox"
-                        id="imus-wifi"
+                        id="aguinaldo-wifi"
                         name="good-points"
                         value="good-wifi"
                     >
 
                     <label
-                        for="imus-wifi"
+                        for="aguinaldo-wifi"
                         class="choice-label"
                     >
                         Good Wi-Fi
@@ -206,13 +237,13 @@
 
                     <input
                         type="checkbox"
-                        id="imus-quiet"
+                        id="aguinaldo-quiet"
                         name="good-points"
                         value="quiet"
                     >
 
                     <label
-                        for="imus-quiet"
+                        for="aguinaldo-quiet"
                         class="choice-label"
                     >
                         Quiet
@@ -221,17 +252,15 @@
                 </div>
 
 
-                <!-- EMAIL -->
-
                 <div class="form-group">
 
-                    <label for="imus-email">
+                    <label for="aguinaldo-email">
                         Contact Email:
                     </label>
 
                     <input
                         type="email"
-                        id="imus-email"
+                        id="aguinaldo-email"
                         name="email"
                         required
                     >

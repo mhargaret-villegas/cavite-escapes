@@ -26,6 +26,19 @@ body {
     line-height: 1.6;
     margin: 0;
     background-color: var(--white);
+
+    /* CSS GRID - PAGE SKELETON */
+    display: grid;
+    grid-template-columns: 220px 1fr;
+
+    grid-template-areas:
+        "masthead masthead"
+        "side     main"
+        "foot     foot";
+
+    gap: 16px;
+
+    min-height: 100vh;
 }
 
 img {
@@ -35,8 +48,34 @@ img {
 
 
 /* ========================================
+   GRID AREAS
+   ======================================== */
+
+.site-header {
+    grid-area: masthead;
+}
+
+aside {
+    grid-area: side;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: foot;
+}
+
+
+/* ========================================
    HEADER AND NAVIGATION
    ======================================== */
+
+/*
+   FLEXBOX is intentionally kept here
+   for the header components.
+*/
 
 .site-header {
     display: flex;
@@ -91,11 +130,53 @@ img {
 
 
 /* ========================================
+   SIDEBAR
+   ======================================== */
+
+aside {
+    padding: 25px 20px;
+
+    background-color: var(--soft-green);
+
+    border-right: 1px solid #dddddd;
+}
+
+aside h2 {
+    margin-top: 0;
+    color: var(--brand-color);
+    font-size: 1.3rem;
+}
+
+aside p {
+    font-size: 0.95rem;
+}
+
+aside ul {
+    padding-left: 20px;
+}
+
+aside li {
+    margin-bottom: 10px;
+}
+
+aside a {
+    color: var(--brand-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+aside a:hover {
+    text-decoration: underline;
+}
+
+
+/* ========================================
    MAIN LAYOUT
    ======================================== */
 
 main {
     width: 100%;
+    min-width: 0;
 }
 
 
@@ -174,6 +255,12 @@ main {
 /* ========================================
    PLACE GRID
    ======================================== */
+
+/*
+   FLEXBOX is intentionally kept here
+   because Activity 7.3 asks us to keep
+   the place-card row using Flexbox.
+*/
 
 .place-grid {
     display: flex;
@@ -361,13 +448,12 @@ main {
    ======================================== */
 
 .place-page {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 30px 20px;
+    text-align: center;
 }
 
 .place-page main {
     width: 100%;
+    padding: 30px 20px;
 }
 
 .place {
@@ -461,7 +547,37 @@ footer {
    RESPONSIVE LAYOUT
    ======================================== */
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
+
+    /*
+       On smaller screens, the CSS Grid
+       changes to one column.
+    */
+
+    body {
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+            "masthead"
+            "side"
+            "main"
+            "foot";
+    }
+
+
+    /* SIDEBAR */
+
+    aside {
+        border-right: none;
+        border-bottom: 1px solid #dddddd;
+        text-align: center;
+    }
+
+    aside ul {
+        list-style-position: inside;
+        padding-left: 0;
+    }
+
 
     /* HEADER */
 
@@ -548,7 +664,7 @@ footer {
 
     /* PLACE DETAIL PAGES */
 
-    .place-page {
+    .place-page main {
         padding-left: 15px;
         padding-right: 15px;
     }
