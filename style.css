@@ -14,6 +14,7 @@
 
 /* ========================================
    BASE STYLES
+   MOBILE FIRST
    ======================================== */
 
 * {
@@ -27,14 +28,16 @@ body {
     margin: 0;
     background-color: var(--white);
 
-    /* CSS GRID - PAGE SKELETON */
+    /* MOBILE GRID */
     display: grid;
-    grid-template-columns: 220px 1fr;
+
+    grid-template-columns: 1fr;
 
     grid-template-areas:
-        "masthead masthead"
-        "side     main"
-        "foot     foot";
+        "masthead"
+        "main"
+        "side"
+        "foot";
 
     gap: 16px;
 
@@ -70,58 +73,81 @@ footer {
 
 /* ========================================
    HEADER AND NAVIGATION
+   FLEXBOX
    ======================================== */
-
-/*
-   FLEXBOX is intentionally kept here
-   for the header components.
-*/
 
 .site-header {
     display: flex;
-    justify-content: space-between;
+
+    flex-direction: column;
+
+    justify-content: center;
     align-items: center;
 
-    padding: 25px 35px;
+    padding: 20px 15px;
 
     border-bottom: 1px solid #dddddd;
+
     background-color: var(--white);
+
+    text-align: center;
 }
 
 
 /* GUIDE NAME AND TAGLINE */
 
 .header-brand {
-    text-align: left;
+    width: 100%;
+    text-align: center;
 }
 
 .header-brand h1 {
     margin: 0;
-    font-size: 2.5rem;
+
+    font-size: 1.9rem;
+
     color: var(--dark-ink);
 }
 
 .header-brand p {
     margin: 5px 0 0;
+
     color: var(--muted-grey);
+
+    font-size: 0.9rem;
 }
 
 
 /* NAVIGATION */
 
+.site-header nav {
+    width: 100%;
+    margin-top: 15px;
+}
+
 .site-header nav ul {
     display: flex;
-    gap: 20px;
+
+    justify-content: center;
+
+    gap: 18px;
 
     list-style: none;
+
     padding: 0;
     margin: 0;
+
+    flex-wrap: wrap;
 }
 
 .site-header nav a {
     text-decoration: none;
+
     color: var(--dark-ink);
+
     font-weight: bold;
+
+    font-size: 0.95rem;
 }
 
 .site-header nav a:hover {
@@ -131,37 +157,50 @@ footer {
 
 /* ========================================
    SIDEBAR
+   MOBILE
    ======================================== */
 
 aside {
-    padding: 25px 20px;
+    margin: 0 15px;
+
+    padding: 20px;
 
     background-color: var(--soft-green);
 
-    border-right: 1px solid #dddddd;
+    border-radius: 15px;
+
+    text-align: center;
 }
 
 aside h2 {
     margin-top: 0;
+
     color: var(--brand-color);
+
     font-size: 1.3rem;
 }
 
 aside p {
-    font-size: 0.95rem;
+    margin-bottom: 15px;
 }
 
 aside ul {
-    padding-left: 20px;
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0;
 }
 
 aside li {
-    margin-bottom: 10px;
+    margin: 10px 0;
 }
 
 aside a {
     color: var(--brand-color);
+
     font-weight: bold;
+
     text-decoration: none;
 }
 
@@ -176,6 +215,9 @@ aside a:hover {
 
 main {
     width: 100%;
+
+    padding: 20px 15px 40px;
+
     min-width: 0;
 }
 
@@ -190,8 +232,8 @@ main {
 
 .home-page main {
     max-width: 1000px;
+
     margin: 0 auto;
-    padding: 35px 30px 60px;
 }
 
 .home-page h1 {
@@ -200,7 +242,9 @@ main {
 
 .home-page main > p {
     color: var(--muted-grey);
+
     font-size: 1.05rem;
+
     margin-bottom: 35px;
 }
 
@@ -209,10 +253,16 @@ main {
 }
 
 .home-page section img {
-    width: 400px;
+    width: 100%;
+
+    max-width: 400px;
+
     height: 300px;
+
     object-fit: contain;
+
     display: block;
+
     margin: 20px auto;
 }
 
@@ -230,16 +280,20 @@ main {
    ======================================== */
 
 .hero-banner {
-    min-height: 180px;
+    min-height: 160px;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     margin: 0 auto 40px;
-    padding: 30px;
+
+    padding: 20px;
 
     background-color: var(--soft-green);
+
     border-radius: 18px;
 
     text-align: center;
@@ -247,24 +301,23 @@ main {
 
 .hero-banner p {
     max-width: 750px;
+
     margin: 0;
-    font-size: 1.1rem;
+
+    font-size: 1rem;
 }
 
 
 /* ========================================
    PLACE GRID
+   FLEXBOX
    ======================================== */
-
-/*
-   FLEXBOX is intentionally kept here
-   because Activity 7.3 asks us to keep
-   the place-card row using Flexbox.
-*/
 
 .place-grid {
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 24px;
 
     align-items: stretch;
@@ -273,16 +326,22 @@ main {
 
 /* ========================================
    PLACE CARDS
+   FLEXBOX
    ======================================== */
 
 .place-card {
     flex: 1 1 240px;
 
+    min-width: 0;
+
     display: flex;
+
     flex-direction: column;
 
     background-color: var(--light-background);
+
     border-radius: 15px;
+
     border-left: 6px solid var(--brand-color);
 
     padding: 20px;
@@ -292,8 +351,11 @@ main {
 
 .place-name {
     font-size: 1.5rem;
+
     color: var(--brand-color);
+
     margin-top: 0;
+
     margin-bottom: 8px;
 }
 
@@ -303,17 +365,21 @@ main {
 
 .place-card img {
     width: 100%;
+
     max-width: 300px;
+
     height: 220px;
 
     object-fit: contain;
 
     display: block;
+
     margin: 20px auto;
 }
 
 .place-card a {
     color: var(--brand-color);
+
     font-weight: bold;
 }
 
@@ -328,12 +394,13 @@ main {
 
 .about-page main {
     max-width: 900px;
+
     margin: 0 auto;
-    padding: 35px 30px 60px;
 }
 
 .about-page h1 {
     margin-top: 20px;
+
     margin-bottom: 10px;
 }
 
@@ -343,17 +410,23 @@ main {
 
 .about-page p {
     line-height: 1.6;
+
     max-width: 700px;
+
     margin: 15px auto;
 }
 
 .about-page img {
-    width: 400px;
+    width: 100%;
+
+    max-width: 400px;
+
     height: 300px;
 
     object-fit: contain;
 
     display: block;
+
     margin: 25px auto;
 }
 
@@ -368,8 +441,8 @@ main {
 
 .contact-page main {
     max-width: 700px;
-    margin: 40px auto;
-    padding: 20px;
+
+    margin: 0 auto;
 
     text-align: left;
 }
@@ -381,21 +454,31 @@ main {
 
 .contact-page fieldset {
     border: 2px solid var(--dark-ink);
+
     border-radius: 10px;
-    padding: 25px;
+
+    padding: 20px;
+
+    min-width: 0;
 }
 
 .contact-page legend {
     font-size: 1.3em;
+
     font-weight: bold;
+
     color: var(--brand-color);
+
     padding: 0 10px;
 }
 
 .contact-page label {
     display: block;
+
     margin-top: 15px;
+
     margin-bottom: 5px;
+
     font-weight: bold;
 }
 
@@ -404,17 +487,22 @@ main {
 .contact-page textarea {
     width: 100%;
 
+    max-width: 100%;
+
     padding: 10px;
 
     font-family: Arial, sans-serif;
+
     font-size: 16px;
 
     border: 1px solid var(--muted-grey);
+
     border-radius: 5px;
 }
 
 .contact-page textarea {
     min-height: 150px;
+
     resize: vertical;
 }
 
@@ -424,14 +512,17 @@ main {
     padding: 12px 25px;
 
     font-size: 16px;
+
     font-weight: bold;
 
     cursor: pointer;
 
     border: none;
+
     border-radius: 5px;
 
     background-color: var(--brand-color);
+
     color: white;
 }
 
@@ -439,6 +530,7 @@ main {
 .contact-page select:focus,
 .contact-page textarea:focus {
     outline: 3px solid var(--brand-color);
+
     outline-offset: 2px;
 }
 
@@ -448,12 +540,17 @@ main {
    ======================================== */
 
 .place-page {
-    text-align: center;
+    width: 100%;
+
+    min-width: 0;
 }
 
 .place-page main {
     width: 100%;
-    padding: 30px 20px;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
 }
 
 .place {
@@ -461,16 +558,20 @@ main {
 }
 
 .place-image {
-    width: 500px;
-    max-width: 100%;
+    width: 100%;
+
+    max-width: 500px;
+
     height: auto;
 
     border-radius: 15px;
+
     margin: 20px 0;
 }
 
 .description {
     max-width: 750px;
+
     margin: 0 auto 40px;
 }
 
@@ -480,11 +581,16 @@ main {
    ======================================== */
 
 .suggest-form {
+    width: 100%;
+
     max-width: 600px;
+
     margin: 50px auto;
-    padding: 25px;
+
+    padding: 20px;
 
     border: 1px solid var(--muted-grey);
+
     border-radius: 15px;
 }
 
@@ -499,18 +605,27 @@ main {
 .form-group input[type="text"],
 .form-group input[type="email"] {
     width: 100%;
+
+    max-width: 100%;
+
     padding: 10px;
 }
 
 .suggest-form fieldset {
     margin-bottom: 20px;
+
     padding: 15px;
+
+    min-width: 0;
 }
 
 .choice-label {
     display: inline;
+
     font-weight: normal;
+
     margin-left: 5px;
+
     margin-right: 15px;
 }
 
@@ -518,17 +633,20 @@ main {
     padding: 12px 20px;
 
     background-color: var(--brand-color);
+
     color: white;
 
     border: none;
+
     border-radius: 5px;
 
     font-weight: bold;
+
     cursor: pointer;
 }
 
 .place-page footer {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 
@@ -538,135 +656,159 @@ main {
 
 footer {
     text-align: center;
+
     color: var(--muted-grey);
+
     padding: 30px 20px;
+
+    min-width: 0;
 }
 
 
 /* ========================================
-   RESPONSIVE LAYOUT
+   TABLET AND DESKTOP
+   ENHANCE UPWARD
    ======================================== */
 
-@media (max-width: 800px) {
+@media (min-width: 700px) {
 
-    /*
-       On smaller screens, the CSS Grid
-       changes to one column.
-    */
+    /* PAGE GRID */
 
     body {
-        grid-template-columns: 1fr;
+        grid-template-columns: 220px 1fr;
 
         grid-template-areas:
-            "masthead"
-            "side"
-            "main"
-            "foot";
-    }
-
-
-    /* SIDEBAR */
-
-    aside {
-        border-right: none;
-        border-bottom: 1px solid #dddddd;
-        text-align: center;
-    }
-
-    aside ul {
-        list-style-position: inside;
-        padding-left: 0;
+            "masthead masthead"
+            "side     main"
+            "foot     foot";
     }
 
 
     /* HEADER */
 
     .site-header {
-        flex-direction: column;
-        justify-content: center;
+        flex-direction: row;
+
+        justify-content: space-between;
+
         align-items: center;
 
-        padding: 20px 15px;
+        padding: 25px 35px;
 
-        text-align: center;
+        text-align: left;
     }
 
 
     /* GUIDE NAME */
 
     .header-brand {
-        width: 100%;
-        text-align: center;
+        width: auto;
+
+        text-align: left;
     }
 
     .header-brand h1 {
-        font-size: 1.9rem;
+        font-size: 2.5rem;
     }
 
     .header-brand p {
-        font-size: 0.9rem;
-        margin-top: 5px;
-    }
-
-
-    /* NAVIGATION BELOW HEADER */
-
-    .site-header nav {
-        width: 100%;
-        margin-top: 15px;
-    }
-
-    .site-header nav ul {
-        justify-content: center;
-        gap: 18px;
-    }
-
-    .site-header nav a {
-        font-size: 0.95rem;
-    }
-
-
-    /* HOME PAGE */
-
-    .home-page main {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-
-    /* WELCOME BANNER */
-
-    .hero-banner {
-        min-height: 160px;
-        padding: 20px;
-    }
-
-    .hero-banner p {
         font-size: 1rem;
     }
 
 
-    /* ABOUT PAGE */
+    /* NAVIGATION */
+
+    .site-header nav {
+        width: auto;
+
+        margin-top: 0;
+    }
+
+    .site-header nav ul {
+        justify-content: flex-end;
+
+        gap: 20px;
+
+        flex-wrap: nowrap;
+    }
+
+    .site-header nav a {
+        font-size: 1rem;
+    }
+
+
+    /* SIDEBAR */
+
+    aside {
+        margin: 0;
+
+        padding: 25px 20px;
+
+        border-radius: 0;
+
+        text-align: left;
+    }
+
+
+    /* MAIN */
+
+    main {
+        padding: 35px 30px 60px;
+    }
+
+
+    /* HOME */
+
+    .home-page main {
+        padding: 35px 30px 60px;
+    }
+
+
+    /* HERO */
+
+    .hero-banner {
+        min-height: 180px;
+
+        padding: 30px;
+    }
+
+    .hero-banner p {
+        font-size: 1.1rem;
+    }
+
+
+    /* ABOUT */
 
     .about-page main {
-        padding-left: 15px;
-        padding-right: 15px;
+        padding: 35px 30px 60px;
     }
 
 
-    /* CONTACT PAGE */
+    /* CONTACT */
 
     .contact-page main {
-        padding-left: 15px;
-        padding-right: 15px;
+        padding: 35px 30px 60px;
     }
 
 
-    /* PLACE DETAIL PAGES */
+    /* PLACE DETAIL */
 
     .place-page main {
-        padding-left: 15px;
-        padding-right: 15px;
+        padding: 30px 20px;
+    }
+
+
+    /* FORMS */
+
+    .suggest-form {
+        padding: 25px;
+    }
+
+
+    /* FOOTER */
+
+    .place-page footer {
+        margin-top: 50px;
     }
 
 }
